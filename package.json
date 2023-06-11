@@ -1,9 +1,23 @@
 {
+  "name": "employee-on-command_db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "watch": "nodemon index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/carolwargo/Employee-On-Command_line.git"
   },
-
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carolwargo/Employee-On-Command_line/issues"
+  },
   "homepage": "https://github.com/carolwargo/Employee-On-Command_line#readme",
   "dependencies": {
     "console.table": "^0.10.0",
@@ -11,4 +25,5 @@
     "inquirer": "^8.2.4",
     "mysql2": "^3.3.4"
   }
+
 }
