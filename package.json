@@ -3,12 +3,7 @@
     "type": "git",
     "url": "git+https://github.com/carolwargo/Employee-On-Command_line.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/carolwargo/Employee-On-Command_line/issues"
-  },
+
   "homepage": "https://github.com/carolwargo/Employee-On-Command_line#readme",
   "dependencies": {
     "console.table": "^0.10.0",
