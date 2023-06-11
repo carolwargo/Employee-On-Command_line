@@ -9,9 +9,12 @@ const connection = mysql.createConnection(
     user: process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DATABASE,
-  },
-  console.log("Welcome!")
+  }
 );
+connection.connect((err) => {
+  if (err) throw err;
+  console.log("Welcome!");
+});
 
 // LISTS main menu choices for users, ACTIVATES their function on selected choice
 function mainMenu() {
