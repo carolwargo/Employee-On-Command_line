@@ -1,11 +1,40 @@
 # Employee-On-Command_line
-# Employee-Database
-## Your Task
+
+### Description
+## Table of Contents
+-[Description](#description)
+-[User Story](#user-story)
+-[Installatiion](#installation)
+-[Usage](#usage)
+-[License](#license)
+-[Questions](#questions)
+
+## User Story
+
+```md
+AS A business owner
+I WANT to be able to view and manage the departments, roles, and employees in my company
+SO THAT I can organize and plan my business
+```
 
 ## Installation
  `npm i inquirer@8.2.4 dotenv mysql2 console.table`
  `npm run` `node index.js`, 
  
+## License
+
+
+## Questions
+
+![image](https://user-images.githubusercontent.com/84477950/243474429-ab5f177d-0f73-41ba-b9ec-22e05087cec8.png) 
+
+Carol Wargo- 
+
+"Mom of 2 men & 1 boy- Living the dream, with my glass half full." 
+
+https://github.com/carolwargo
+
+
 
  ## Usage
  Use arrows to navigate
@@ -16,13 +45,6 @@ Because this Challenge will require the use of the `Inquirer` package, ensure th
 
 Because this application won’t be deployed, you’ll also need to create a walkthrough video that demonstrates its functionality and all of the following acceptance criteria being met. You’ll need to submit a link to the video and add it to the README of your project.
 
-## User Story
-
-```md
-AS A business owner
-I WANT to be able to view and manage the departments, roles, and employees in my company
-SO THAT I can organize and plan my business
-```
 
 ## Acceptance Criteria
 
