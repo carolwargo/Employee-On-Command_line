@@ -1,10 +1,10 @@
 -- CREATE the employee database
 CREATE DATABASE employee_db;
 
--- SWITCH to the employee database
+-- SWITCH to employee database
 USE employee_db;
 
--- Create the department table
+-- CREATE department table
 CREATE TABLE department (
   id INT PRIMARY KEY,
   name VARCHAR(30)
