@@ -1,7 +1,7 @@
 {
-  "name": "employee_on_command_line_db",
+  "name": "employee-on-command_line",
   "version": "1.0.0",
-  "description": "",
+  "description": "-[Description](#description)\r -[User Story](#user-story)\r -[Installatiion](#installation)\r -[Usage](#usage)\r -[License](#license)\r -[Questions](#questions)",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -23,5 +23,6 @@
     "dotenv": "^16.1.4",
     "inquirer": "^8.2.4",
     "mysql2": "^3.3.4"
-  }
+  },
+  "devDependencies": {}
 }
