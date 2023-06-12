@@ -1,5 +1,6 @@
 -- CREATE the employee database
-CREATE DATABASE employee_on_command_line_db;
+
+DROP DATABASE IF EXISTS employee_on_command_line;
 
 -- Switch to the employee-on-command_line database
 USE employee_on_command_line;
