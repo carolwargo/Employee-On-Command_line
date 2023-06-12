@@ -1,8 +1,11 @@
 -- CREATE the employee database
 CREATE DATABASE employee_on_command_line_db;
 
+-- Switch to the employee-on-command_line database
+USE employee_on_command_line;
+
 -- SWITCH to employee database
-USE employee_db;
+USE employee_on_command_line_db;
 
 -- CREATE department table
 CREATE TABLE department (
