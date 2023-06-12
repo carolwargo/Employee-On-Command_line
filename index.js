@@ -1,7 +1,6 @@
 const inquier = require("inquirer");
 const mysql = require("mysql2");
 require("dotenv").config();
-const cTable = require('console.table');
 
 // CREATES connection to database
 const connection = mysql.createConnection(
@@ -246,7 +245,7 @@ function addRole() {
     });
 }
 
-// cCONSOLE LOGS table of all departments 
+// CONSOLE LOGS table of all departments 
 function viewAllDepartments() {
   connection.query("SELECT * FROM department", function (err, result) {
     if (err) {
