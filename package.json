@@ -1,5 +1,5 @@
 {
-  "name": "employee_db",
+  "name": "employee_on_command_line_db",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
