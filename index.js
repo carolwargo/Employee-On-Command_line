@@ -13,7 +13,7 @@ const connection = mysql.createConnection(
   console.log("Welcome!")
 );
 
-// LISTS main choices for users, ACTIVATES function on selected choice
+// LISTS main menu choices, ACTIVATES selected choice
 function mainMenu() {
   inquier
     .prompt([
@@ -66,7 +66,7 @@ function mainMenu() {
     });
 }
 
-// CONSOLE LOG table of all current employees
+// CONSOLE TABLE employees
 function viewAllEmployees() {
   connection.query(
     `SELECT 
@@ -143,7 +143,7 @@ function addEmployee() {
     });
 }
 
-// UPDATE employees role based of their id number
+// UPDATE employees role by id 
 function updateRole() {
   inquier
     .prompt([
@@ -180,7 +180,7 @@ function updateRole() {
         JOIN department ON role.department_id = department.id
         LEFT JOIN employee manager ON employee.manager_id = manager.id`,
         function (err, result) {
-            if (err) throw err;
+          if (err) throw err;
           console.table(result);
           mainMenu();
         }
@@ -188,7 +188,7 @@ function updateRole() {
     });
 }
 
-// CONSOLE LOG table of all roles
+// CONSOLE LOG TABLE roles
 function viewAllRoles() {
   connection.query(
     "SELECT role.id, role.title, role.salary, department.name AS department FROM role JOIN department ON role.department_id = department.id",
@@ -202,7 +202,7 @@ function viewAllRoles() {
   );
 }
 
-// CREATES a new role and ALLOWS user to assign the role to a department 
+// CREATES role and ALLOWS user to assign role to department
 function addRole() {
   inquier
     .prompt([
@@ -228,24 +228,27 @@ function addRole() {
         [data.title, data.salary, data.deptId],
         function (err, result) {
           if (err) throw err;
-          
-        })
-        connection.query(`SELECT 
+        }
+      );
+      connection.query(
+        `SELECT 
         role.id, 
         role.title, 
         role.salary, 
         department.name AS department 
         FROM role 
         JOIN department 
-        ON role.department_id = department.id`, function (err, result){
-            if (err) throw err;
-            console.table(result)
-            mainMenu();
-        })
+        ON role.department_id = department.id`,
+        function (err, result) {
+          if (err) throw err;
+          console.table(result);
+          mainMenu();
+        }
+      );
     });
 }
 
-// CONSOLE LOGS table of all departments 
+// CONSOLE LOGS TABLE departments
 function viewAllDepartments() {
   connection.query("SELECT * FROM department", function (err, result) {
     if (err) {
@@ -256,7 +259,7 @@ function viewAllDepartments() {
   });
 }
 
-// CREATE a new department 
+// CREATE new department
 function addDepartment() {
   inquier
     .prompt([
@@ -272,14 +275,14 @@ function addDepartment() {
         [data.name],
         function (err, result) {
           if (err) throw err;
-          
-        })
+        }
+      );
 
-        connection.query('SELECT * FROM department', function (err,result){
-            if (err) throw err;
-            console.table(result);
-            mainMenu();
-        });
+      connection.query("SELECT * FROM department", function (err, result) {
+        if (err) throw err;
+        console.table(result);
+        mainMenu();
+      });
     });
 }
 
