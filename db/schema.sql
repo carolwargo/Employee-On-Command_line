@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS employee_on_command_line_db;
 CREATE DATABASE employee_on_command_line_db;
 
 -- SWITCH to employee database
