@@ -1,7 +1,6 @@
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
 require("dotenv").config();
-const cTable = require("console.table");
 
 console.log(process.env.HOST);
 console.log(process.env.USER);
