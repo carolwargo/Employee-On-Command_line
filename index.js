@@ -96,7 +96,6 @@ function viewAllEmployees() {
         console.log(err);
       }
       console.table(result);
-      mainMenu();
     }
   );
 }
@@ -148,11 +147,10 @@ async function addEmployee() {
                      LEFT JOIN employee manager ON employee.manager_id = manager.id`,
       function (err, result) {
         console.table(result);
-        mainMenu();
       }
     );
   } catch (error) {
-    console.lot(error);
+    console.log(error);
     mainMenu();
   }
 }
@@ -197,7 +195,6 @@ async function updateRole() {
       function (err, result) {
         if (err) throw err;
         console.table(result);
-        mainMenu();
       }
     );
   } catch (error) {
@@ -261,7 +258,6 @@ async function addRole() {
       function (err, result) {
         if (err) throw err;
         console.table(result);
-        mainMenu();
       }
     );
   } catch (error) {
@@ -304,10 +300,9 @@ async function addDepartment() {
     connection.query("SELECT * FROM department", function (err, result) {
       if (err) throw err;
       console.table(result);
-      mainMenu();
     });
   } catch (error) {
-    console.lot(error);
+    console.log(error);
     mainMenu();
   }
 }
