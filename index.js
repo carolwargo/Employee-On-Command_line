@@ -14,9 +14,9 @@ const connection = mysql.createConnection(
 );
 
 // LISTS main menu choices, ACTIVATES selected choice
+// ADDED async to mainMenu function
 async function mainMenu() {
-   await inquier
-    .prompt([
+   await inquier.prompt([
       {
         type: "list",
         name: "answer",
@@ -91,9 +91,9 @@ function viewAllEmployees() {
 }
 
 // ADD employee to database
-function addEmployee() {
-  inquier
-    .prompt([
+//ADDED async to addEmployee function
+async function addEmployee() {
+  await inquier.prompt([
       {
         type: "input",
         name: "firstName",
@@ -144,9 +144,9 @@ function addEmployee() {
 }
 
 // UPDATE employees role by id 
-function updateRole() {
-  inquier
-    .prompt([
+// ADDED async to updateRole function
+async function updateRole() {
+  await inquier.prompt([
       {
         type: "input",
         name: "employee",
@@ -203,9 +203,9 @@ function viewAllRoles() {
 }
 
 // CREATES role and ALLOWS user to assign role to department
-function addRole() {
-  inquier
-    .prompt([
+// ADDED async to addRole function
+async function addRole() {
+  await inquier.prompt([
       {
         type: "input",
         name: "title",
@@ -260,9 +260,9 @@ function viewAllDepartments() {
 }
 
 // CREATE new department
-function addDepartment() {
-  inquier
-    .prompt([
+// ADDED async to addDepartment function
+async function addDepartment() {
+  await inquier.prompt([
       {
         type: "input",
         name: "name",
