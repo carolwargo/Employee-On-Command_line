@@ -10,21 +10,6 @@ const connection = mysql.createConnection({
   database: process.env.DATABASE,
 });
 
-// CONNECT to the database
-connection.connect((error) => {
-  if (error) {
-    console.error("Error connecting to the database:", error);
-    return;
-  }
-  console.log("Connected to the database!");
-  mainMenu();
-});
-
-// HANDLE errors during the connecion
-connection.on("error", (error) => {
-  console.error("Database connection error:", error);
-});
-
 // LISTS main menu choices, ACTIVATES selected choice
 async function mainMenu() {
   try {
