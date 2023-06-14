@@ -64,7 +64,6 @@ async function mainMenu() {
   }
 }
 
-// CONSOLE TABLE employees
 function viewAllEmployees() {
   connection.query(
     `SELECT 
@@ -82,7 +81,18 @@ function viewAllEmployees() {
       if (err) {
         console.log(err);
       }
-      console.table(result);
+
+      // Log the data in a formatted way
+      result.forEach((employee) => {
+        console.log(`ID: ${employee.id}`);
+        console.log(`Name: ${employee.name}`);
+        console.log(`Title: ${employee.title}`);
+        console.log(`Salary: ${employee.salary}`);
+        console.log(`Manager: ${employee.manager}`);
+        console.log(`Department: ${employee.department}`);
+        console.log("------------------------");
+      });
+
       mainMenu();
     }
   );
