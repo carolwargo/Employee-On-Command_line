@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const mysql = require("mysql2");
 require("dotenv").config();
 
+
 console.log(process.env.HOST);
 console.log(process.env.USER);
 console.log(process.env.PASSWORD);
