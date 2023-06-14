@@ -82,7 +82,7 @@ function viewAllEmployees() {
         console.log(err);
       }
 
-      // Log the data in a formatted way
+      // LOG DATA
       result.forEach((employee) => {
         console.log(`ID: ${employee.id}`);
         console.log(`Name: ${employee.name}`);
