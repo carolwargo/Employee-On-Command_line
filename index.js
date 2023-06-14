@@ -8,7 +8,9 @@ const connection = mysql.createConnection({
   user: process.env.USER,
   password: process.env.PASSWORD,
   database: process.env.DATABASE,
-});
+},
+console.log("Welcome!")
+);
 
 // LISTS main menu choices, ACTIVATES selected choice
 async function mainMenu() {
@@ -81,6 +83,7 @@ function viewAllEmployees() {
         console.log(err);
       }
       console.table(result);
+      mainMenu();
     }
   );
 }
@@ -137,7 +140,7 @@ async function addEmployee() {
     );
   } catch (error) {
     console.log(error);
-  
+    mainMenu();
   }
 }
 
