@@ -14,7 +14,7 @@ const connection = mysql.createConnection(
 );
 
 // LISTS main menu choices, ACTIVATES selected choice
-function mainMenu() {
+async function mainMenu() {
   inquier
     .prompt([
       {
