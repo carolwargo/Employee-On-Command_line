@@ -1,24 +1,36 @@
-const inquier = require("inquirer");
+const inquirer = require("inquirer");
 const mysql = require("mysql2");
 require("dotenv").config();
-
 const cTable = require('console.table');
 
-// CREATES connection to database
-const connection = mysql.createConnection(
-  {
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
-  },
-  console.log("Welcome!")
-);
+// CREATE connection to database
+const connection = mysql.createConnection({
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
+});
+
+// CONNECT to the database
+connection.connect(error => {
+  if (error) {
+    console.error("Error connecting to the database:", error)
+    return;
+  }
+  console.log("Connected to the database!");
+  mainMenu();
+});
+
+// HANDLE errors during the connecion
+connection.on('error', error => {
+  console.error("Database connection error:", error);
+});
+
 
 // LISTS main menu choices, ACTIVATES selected choice
-// ADDED async to mainMenu function
 async function mainMenu() {
-   await inquier.prompt([
+  try {
+    const {answer} = await inquier.prompt([
       {
         type: "list",
         name: "answer",
@@ -34,38 +46,38 @@ async function mainMenu() {
           "Exit",
         ],
       },
-    ])
-    .then(({ answer }) => {
+    ]);
+
       switch (answer) {
         case "View All Employees":
           viewAllEmployees();
           break;
         case "Add Employee":
-          addEmployee();
+          await addEmployee();
           break;
         case "Update Employee Role":
-          updateRole();
+          await updateRole();
           break;
         case "View All Roles":
           viewAllRoles();
           break;
         case "Add Role":
-          addRole();
+          await addRole();
           break;
         case "View All Deparments":
           viewAllDepartments();
           break;
         case "Add Department":
-          addDepartment();
+          await addDepartment();
           break;
         case "Exit":
           exit();
           break;
       }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    }
+    catch(error)  {
+      console.log(error);
+    }
 }
 
 // CONSOLE TABLE employees
@@ -95,7 +107,9 @@ function viewAllEmployees() {
 // ADD employee to database
 //ADDED async to addEmployee function
 async function addEmployee() {
-  await inquier.prompt([
+  try { 
+    const data = await inquirer.prompt([
+  
       {
         type: "input",
         name: "firstName",
@@ -117,7 +131,6 @@ async function addEmployee() {
         message: "what is your employees manager id?",
       },
     ])
-    .then((data) => {
       connection.query(
         "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?,?,?,?)",
         [data.firstName, data.lastName, data.role, data.manager],
@@ -142,13 +155,18 @@ async function addEmployee() {
           mainMenu();
         }
       );
-    });
+    } catch (error) {
+      console.lot(error);
+      mainMenu();
+    }
 }
 
 // UPDATE employees role by id 
 // ADDED async to updateRole function
 async function updateRole() {
-  await inquier.prompt([
+  try {
+    const data = await inquirer.prompt([
+
       {
         type: "input",
         name: "employee",
@@ -160,8 +178,8 @@ async function updateRole() {
         message:
           "What is the id of the new role you wish to assign this employee",
       },
-    ])
-    .then((data) => {
+    ]);
+    
       connection.query(
         "UPDATE employee SET role_id = ? WHERE id = ?",
         [data.role, data.employee],
@@ -187,7 +205,10 @@ async function updateRole() {
           mainMenu();
         }
       );
-    });
+    } catch (error) {
+      console.log(error);
+      mainMenu();
+    }
 }
 
 // CONSOLE LOG TABLE roles
@@ -207,7 +228,8 @@ function viewAllRoles() {
 // CREATES role and ALLOWS user to assign role to department
 // ADDED async to addRole function
 async function addRole() {
-  await inquier.prompt([
+  try { 
+    const data = await inquirer.prompt([
       {
         type: "input",
         name: "title",
@@ -223,8 +245,8 @@ async function addRole() {
         name: "deptId",
         message: "What is this roles department id?",
       },
-    ])
-    .then((data) => {
+    ]);
+    
       connection.query(
         "INSERT INTO role (title, salary, department_id) VALUES (?,?,?);",
         [data.title, data.salary, data.deptId],
@@ -247,7 +269,10 @@ async function addRole() {
           mainMenu();
         }
       );
-    });
+} catch (error) {
+  console.log(error);
+  mainMenu();
+ }
 }
 
 // CONSOLE LOGS TABLE departments
@@ -255,6 +280,7 @@ function viewAllDepartments() {
   connection.query("SELECT * FROM department", function (err, result) {
     if (err) {
       console.log(err);
+      return mainMenu();
     }
     console.table(result);
     mainMenu();
@@ -264,14 +290,14 @@ function viewAllDepartments() {
 // CREATE new department
 // ADDED async to addDepartment function
 async function addDepartment() {
-  await inquier.prompt([
-      {
+  try {
+    const data = await inquirer.prompt([
+   {
         type: "input",
         name: "name",
         message: "What is the name of your new department?",
       },
     ])
-    .then((data) => {
       connection.query(
         "INSERT INTO department (name) VALUES (?)",
         [data.name],
@@ -285,7 +311,10 @@ async function addDepartment() {
         console.table(result);
         mainMenu();
       });
-    });
+} catch (error) {
+  console.lot(error);
+  mainMenu();
+  }
 }
 
 // END QUIT
