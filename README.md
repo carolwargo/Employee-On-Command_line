@@ -8,12 +8,12 @@ Employee-On-Command-line is a Command-line **content management system (CMS)**, 
 
 ## Table of Contents
 
--[Description](#description)
--[User Story](#user-story)
--[Installatiion](#installation)
--[Usage](#usage)
--[License](#license)
--[Questions](#questions)
+* -[Description](#description)
+* -[User Story](#user-story)
+* -[Installatiion](#installation)
+* -[Usage](#usage)
+* -[License](#license)
+* -[Questions](#questions)
 
 ## User Story
 
@@ -25,7 +25,7 @@ SO THAT I can organize and plan my business.
 ## Installation
 
  `npm i inquirer@8.2.4 dotenv mysql2`,
- `node index.js`
+ 
 
 ## Usage
 
@@ -41,21 +41,17 @@ The following 'MAIN MENU' options will appear:
 * update an employee role
 
 * "view all..." (will display the selected in a formatted table)
-    * * `department`(department names and department ids),
-    * * `roles`(job title, role id, department the role belongs to and salary per role),
-    * * `employees`(id, first/last names, titles, departments, salaries, employee manager).
+     * `department`(department names and department ids),
+     * `roles`(job title, role id, department the role belongs to and salary per role),
+     * `employees`(id, first/last names, titles, departments, salaries, employee manager).
 
 * "add a(n)..." 
-    * * enter `department` to add a new department,
-    * * enter `role` to add a new role,
-    * * enter `employee` to add a new employee
+     * enter `department` to add a new department,
+     * enter `role` to add a new role,
+     * enter `employee` to add a new employee
 
 * "update an employee role" 
-    * * select the `employee` you would like to update, and enter new "employee role"
-
-## License
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+     * select the `employee` you would like to update, and enter new "employee role"
 
 ## Questions
 
