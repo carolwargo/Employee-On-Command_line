@@ -55,7 +55,7 @@ The following 'MAIN MENU' options will appear:
 
 ## License
 
-![license] (https://github.com/carolwargo/Employee-On-Command_line/blob/aa90bb07e7b9f6c91926398eb63ec5d534d41f3e/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Questions
 
