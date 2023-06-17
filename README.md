@@ -6,6 +6,9 @@
 
 Employee-On-Command-line is a Command-line **content management system (CMS)**, built using Node.js, Inquirer, and MySQL- A CMS is an interface that allows non-developers to easily view and interact with information stored in their database. 
 
+[![Thumbnail]https://www.canva.com/design/DAFmF44uclQ/bhzTShDUCr8ZtO-sXIPZnQ/edit?utm_content=DAFmF44uclQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton](https://www.canva.com/design/DAFmF-shp1E/qqM7SOQnnNqO8SWRCc6ILA/watch?utm_content=DAFmF-shp1E&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelin)
+
+
 ## Table of Contents
 
 * -[Description](#description)
@@ -62,3 +65,5 @@ Carol Wargo-
 "Mom of 2 men & 1 boy- Living the dream, with my glass half full." 
 
 https://github.com/carolwargo
+
+[def]: https://drive.google.com/file/d/1GVQ_eVJQU4RWfWs01XlBquB6RCGw6Lkr/view?usp=sharing
